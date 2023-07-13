@@ -101,7 +101,7 @@ export default function Skills() {
   return (
     <section className="px-6 py-12">
       <h2 className="text-4xl font-bold">My Skills</h2>
-      <div className="mt-8 flex flex-wrap justify-between">
+      <div className="mt-8 flex flex-wrap">
         {Object.keys(skills).map((skill) => (
           <div
             className="p-2 m-2 bg-white rounded-lg shadow-md flex items-center"
