@@ -53,7 +53,7 @@ import { AiOutlineSolution } from "react-icons/ai";
 import { MdDataObject } from "react-icons/md";
 
 export default function Skills() {
-  const skills = {
+  const skills: Record<string, any> = {
     "Node.js": <FaNode />,
     "React.js": <FaReact />,
     "Redux/Context API": <SiRedux />,
