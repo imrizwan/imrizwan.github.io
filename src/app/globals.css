@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+.background-image {
+  background-image: url('../../public/bg.jpeg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}

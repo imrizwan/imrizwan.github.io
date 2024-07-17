@@ -1,0 +1,286 @@
+{
+  "about_me": "I am a Fullstack JavaScript Developer with 5 years experience, I develop and maintain web applications. I have worked with a variety of programming languages and tools, including but not limited to: JavaScript, Typescript, React.js, Nextjs, Node.js, Nestjs, MongoDB, SQL, AWS, Docker, Kubernetes and Microservices. I am able to work independently and as part of a team and I have ability to take a project from start to finish, ensuring that all the necessary steps are completed along the way.",
+  "contact_info": {
+    "phone_numbers": [
+      "+1 8047155571",
+      "+92 3049178827"
+    ],
+    "email": "razzyshaikh@gmail.com",
+    "skype": "rizwan3866",
+    "linkedin": "https://www.linkedin.com/in/mrizwanshaikh/",
+    "website": "https://www.rizwan.tech/",
+    "github": "https://github.com/imrizwan",
+    "location": "Karachi, Pakistan"
+  },
+  "work_experience": [
+    {
+      "job_title": "Senior Software Engineer",
+      "company": "Self Employed",
+      "start_date": "2024-01-01",
+      "end_date": "Current",
+      "location": "Remote",
+      "responsibilities": [
+        "I'm working with different clients to help built their softwares and apps",
+        "Using Upwork and other means to get the clients on monthly basis",
+        "Working as Senior Software Developer and managing everything for clients"
+      ]
+    },
+    {
+      "job_title": "Senior Software Engineer",
+      "company": "Hypenet Network Services LLC",
+      "start_date": "2023-10-13",
+      "end_date": "2023-12-08",
+      "location": "Dubai, Pakistan",
+      "responsibilities": [
+        "Worked as a Senior Software Engineer and managed a team 5 developers",
+        "Managed projects successfully until startup closed due to funding from investors",
+        "Collaborated with other Senior Software Developers",
+        "Collaborated with other departments to manage apps",
+        "Attended conferences and represented company in big events such as GITEX Dubai 2023"
+      ]
+    },
+    {
+      "job_title": "Senior Backend Developer (Nodejs)",
+      "company": "TNC IT GROUP",
+      "start_date": "2022-02-28",
+      "end_date": "2023-10-13",
+      "location": "Dubai, United Arab Emirates",
+      "responsibilities": [
+        "Work as part of a team developing applications and services using Agile development methods",
+        "Built customer-facing UI and back-end services",
+        "Code, test and operate node.js based service",
+        "Worked on blockchain based apps and services"
+      ]
+    },
+    {
+      "job_title": "Software Engineer (Level II)",
+      "company": "Digital Dividend",
+      "start_date": "2020-02-01",
+      "end_date": "2022-01-31",
+      "location": "Karachi, Pakistan",
+      "responsibilities": [
+        "Joined as a Software Engineer I and promoted as a Software Engineer II within a span of one year",
+        "Developed applications such as rsd.io and various other apps from scratch",
+        "Guided by various senior software engineers with 10+ years of experience",
+        "Maintained various apps internal and external of company",
+        "Directly interected with various clients",
+        "Worked on various technologies",
+        "Managed a team of 2 developers remotely"
+      ]
+    },
+    {
+      "job_title": "Fullstack developer",
+      "company": "Bizintel",
+      "start_date": "2009-07-01",
+      "end_date": "2020-01-31",
+      "location": "Karachi, Pakistan",
+      "responsibilities": [
+        "Worked on various new technologies to build applications",
+        "developed web application internaly for organization and maintained as well",
+        "maintained their previous applications",
+        "As a fresher, guided by senior to learn new skills"
+      ]
+    }
+  ],
+  "education_and_training": [
+    {
+      "degree": "Bachelors in Computer Science",
+      "institution": "Sindh Madressatul Islam University",
+      "start_date": "2016-01-31",
+      "end_date": "2020-01-01",
+      "location": "Karachi, Pakistan",
+      "website": "https://smiu.edu.pk/"
+    }
+  ],
+  "language_skills": {
+    "english": {
+      "listening": "C1",
+      "reading": "C1",
+      "writing": "C1",
+      "spoken_production": "C1",
+      "spoken_interaction": "C1"
+    },
+    "urdu": {
+      "listening": "C2",
+      "reading": "C2",
+      "writing": "C2",
+      "spoken_production": "C2",
+      "spoken_interaction": "C2"
+    }
+  },
+  "digital_skills": {
+    "frontend": [
+      "ReactJS",
+      "Nextjs",
+      "Redux",
+      "JQuery",
+      "Progressive Web Applications",
+      "HTML5",
+      "CSS/SCSS",
+      "Material UI",
+      "Bootstrap"
+    ],
+    "backend": [
+      "Nodejs",
+      "Nestjs",
+      "Firebase",
+      "Apache Kafka",
+      "RabittMQ",
+      "NATS",
+      "Expressjs",
+      "TypeORM",
+      "Mongoose",
+      "Knexjs",
+      "Sequelize",
+      "Unit Testing",
+      "Postman"
+    ],
+    "database": [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "SQL"
+    ],
+    "cloud": [
+      "Docker",
+      "Kubernetes",
+      "Microservices",
+      "Redis",
+      "Oracle Cloud",
+      "Amazon Web Services",
+      "Google Cloud Platform",
+      "Heroku",
+      "CI/CD"
+    ],
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Object-Oriented Programming"
+    ],
+    "misc": [
+      "Git",
+      "Github",
+      "Gitlab",
+      "Bitbucket",
+      "JSON",
+      "API Integrations",
+      "Clickup",
+      "Trello",
+      "YAML",
+      "Software Design Patterns"
+    ]
+  },
+  "honours_and_awards": [
+    {
+      "title": "Microservices with Node JS and React",
+      "institution": "Udemy",
+      "date": "2020-05-01"
+    },
+    {
+      "title": "React Nanodegree",
+      "institution": "Udacity",
+      "date": "2020-05-01",
+      "link": "https://www.udacity.com/certificate/TNDFUL2"
+    },
+    {
+      "title": "CMAD (Certified Mobile Application Developer)",
+      "institution": "All Pakistan Memon Federation",
+      "date": "2017-09-17"
+    },
+    {
+      "title": "Participated in Google DevFest (GDG Kolachi) hackathon, got Runner Up position",
+      "institution": "Google DevFest"
+    }
+  ],
+  "projects": [
+    {
+      "name": "RSD.ai CMS Dashboard",
+      "company": "Digital Dividend",
+      "description": "Developed a CMS dashboard for an AI-based audience measurement platform, Red Sea Digital. The system utilizes camera feeds to provide comprehensive analytics, including footfall, demographics, heatmaps, and other relevant data.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Computer Vision",
+        "AI"
+      ]
+    },
+    {
+      "name": "MachineSells.com",
+      "company": "Digital Dividend",
+      "description": "Engineered and maintained Pakistan's premium B2B machine trading platform, connecting verified sellers and buyers worldwide for seamless machine trading.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "SQL",
+        "Microservices",
+        "Docker"
+      ]
+    },
+    {
+      "name": "CarHub App",
+      "company": "Digital Dividend",
+      "description": "Designed and developed CarHub, a comprehensive digital platform for automotive services. The app enables service providers to offer their services and promote their offers efficiently.",
+      "technologies": [
+        "React Native",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "App.Inventooly.com",
+      "company": "Digital Dividend",
+      "description": "Built Inventooly, an application leveraging Amazon SP APIs for accurate sales forecasting, helping businesses optimize their inventory and sales strategies.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Amazon SP API"
+      ]
+    },
+    {
+      "name": "Real Research / Real Research eCommerce Store",
+      "company": "TNC IT GROUP",
+      "description": "Developed a secure, blockchain-based research tool that gathers reliable data and protects respondent profiles. Survey participants are rewarded with cryptocurrency, enhancing engagement and data quality.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Blockchain",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Stream Coin / Homeros Coin / Gera Coin",
+      "company": "TNC IT GROUP",
+      "description": "Created user dashboards for various cryptocurrency projects, enhancing user experience and engagement within the blockchain ecosystem.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Cryptocurrency",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "PackRat",
+      "company": "Independent Project via Upwork",
+      "description": "Developed PackRat, a versatile adventure planner that simplifies trip organization for outdoor activities, from day hikes to cross-country journeys.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Docker"
+      ]
+    }
+  ]
+}
