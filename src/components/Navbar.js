@@ -165,7 +165,7 @@ const Navbar = ({ homeRef, scroll, data }) => {
             <div className="max-w-7xl mx-auto p-4 text-center min-h-screen flex flex-col justify-center items-center">
                 <h2 className="text-white text-3xl mb-2">Muhammad Rizwan</h2>
                 <h3 className="text-white text-2xl mb-4">Full-Stack Developer</h3>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md">Let&apos;s Connect</button>
+                <a href={data.cv_link} className="bg-blue-500 text-white px-4 py-2 rounded-md" target='_blank'>Download my CV</a>
             </div>
         </header>
     );
