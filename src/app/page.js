@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Intro from '../components/Intro';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
+import ContactForm from '../components/ContactForm';
 import Footer from '../components/Footer';
 import data from '../../data/profile.json'
 
@@ -59,6 +60,7 @@ export default function Home() {
         <Intro aboutRef={about} />
         <Projects projectsRef={projects} data={data} />
         <Skills skillsRef={skills} />
+        <ContactForm contactRef={contact} />
         <Footer contactRef={contact} />
       </div>
     </main>
