@@ -4,21 +4,10 @@ import React from "react";
 import Image from "next/image";
 import { FaLinkedin, FaGithub, FaStackOverflow } from "react-icons/fa";
 
-const Intro = () => {
+const Intro = ({ aboutRef }) => {
     return (
-        <div className="flex flex-col md:flex-row min-h-screen">
-            {/* Left container */}
-            <div className="w-full md:w-1/2 relative">
-                <Image
-                    src="/path-to-your-image.jpg"
-                    alt="Image Description"
-                    layout="fill"
-                    objectFit="cover"
-                    className="w-full h-full"
-                />
-            </div>
-            {/* Right container */}
-            <div className="w-full md:w-1/2 p-8 flex flex-col justify-center items-start bg-gray-900 text-white">
+        <div className="flex flex-col md:flex-row min-h-screen" ref={aboutRef} >
+            <div className="w-full md:w-2/2 p-8 flex flex-col justify-center items-start bg-gray-900 text-white">
                 <h1 className="text-4xl mb-4 relative">
                     <span className="border-b-2 border-white inline-block">
                         About Rizwan

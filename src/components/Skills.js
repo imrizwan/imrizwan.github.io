@@ -93,9 +93,9 @@ const skills = [
   }
 ];
 
-const Skills = () => {
+const Skills = ({ skillsRef }) => {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-100" ref={skillsRef}>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-6 text-blue-400">Skills</h2>
         <div className="border-b-4 border-blue-500 w-24 mx-auto mb-12"></div>

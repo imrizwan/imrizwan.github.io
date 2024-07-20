@@ -1,10 +1,10 @@
 import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa';
 
-const Footer = () => {
+const Footer = ({ contactRef }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-4">
+    <footer className="bg-gray-900 text-white py-4" ref={contactRef}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <p className="text-lg font-bold">Muhammad Rizwan</p>
         <div className="flex space-x-4">

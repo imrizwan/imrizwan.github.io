@@ -196,6 +196,7 @@
     {
       "name": "RSD.ai CMS Dashboard",
       "company": "Digital Dividend",
+      "image": "/rsd.png",
       "description": "Developed a CMS dashboard for an AI-based audience measurement platform, Red Sea Digital. The system utilizes camera feeds to provide comprehensive analytics, including footfall, demographics, heatmaps, and other relevant data.",
       "technologies": [
         "React",
@@ -208,6 +209,7 @@
     },
     {
       "name": "MachineSells.com",
+      "image": "/machinesells.png",
       "company": "Digital Dividend",
       "description": "Engineered and maintained Pakistan's premium B2B machine trading platform, connecting verified sellers and buyers worldwide for seamless machine trading.",
       "technologies": [
@@ -222,6 +224,7 @@
     },
     {
       "name": "CarHub App",
+      "image": "/carhub.png",
       "company": "Digital Dividend",
       "description": "Designed and developed CarHub, a comprehensive digital platform for automotive services. The app enables service providers to offer their services and promote their offers efficiently.",
       "technologies": [
@@ -234,6 +237,7 @@
     },
     {
       "name": "App.Inventooly.com",
+      "image": "/inventooly.png",
       "company": "Digital Dividend",
       "description": "Built Inventooly, an application leveraging Amazon SP APIs for accurate sales forecasting, helping businesses optimize their inventory and sales strategies.",
       "technologies": [
@@ -246,6 +250,7 @@
     },
     {
       "name": "Real Research / Real Research eCommerce Store",
+      "image": "/realresearcher.png",
       "company": "TNC IT GROUP",
       "description": "Developed a secure, blockchain-based research tool that gathers reliable data and protects respondent profiles. Survey participants are rewarded with cryptocurrency, enhancing engagement and data quality.",
       "technologies": [
@@ -259,6 +264,7 @@
     },
     {
       "name": "Stream Coin / Homeros Coin / Gera Coin",
+      "image": "/steam-coin.png",
       "company": "TNC IT GROUP",
       "description": "Created user dashboards for various cryptocurrency projects, enhancing user experience and engagement within the blockchain ecosystem.",
       "technologies": [
@@ -272,6 +278,7 @@
     },
     {
       "name": "PackRat",
+      "image": "/packrat.png",
       "company": "Independent Project via Upwork",
       "description": "Developed PackRat, a versatile adventure planner that simplifies trip organization for outdoor activities, from day hikes to cross-country journeys.",
       "technologies": [

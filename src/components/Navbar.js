@@ -3,42 +3,39 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const Navbar = () => {
+const Navbar = ({ homeRef, scroll, data }) => {
+    const {
+        scrollToHome,
+        scrollToAbout,
+        scrollToProjects,
+        scrollToSkills,
+        scrollToContact
+    } = scroll;
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const drawerRef = useRef(null);
-    const dropdownRef = useRef(null);
+    // const dropdownRef = useRef(null);
 
     const menu = [
         {
             title: "Home",
-            link: "/"
+            link: "/",
+            scroll: scrollToHome
         },
         {
             title: "About",
-            link: "/about"
+            link: "/about",
+            scroll: scrollToAbout
         },
         {
             title: "Projects",
             link: "/projects",
-            projects: [
-                {
-                    title: "Project 1",
-                    link: "/project1"
-                },
-                {
-                    title: "Project 2",
-                    link: "/project2"
-                },
-                {
-                    title: "Project 3",
-                    link: "/project3"
-                },
-            ]
+            scroll: scrollToProjects
         },
         {
-            title: "contact",
-            link: "/contact"
+            title: "Contact",
+            link: "/contact",
+            scroll: scrollToContact
         },
     ]
 
@@ -73,8 +70,8 @@ const Navbar = () => {
     };
 
     return (
-        <header className="bg-gray-900 bg-opacity-50 background-image">
-            <nav className="max-w-7xl mx-auto p-4 flex justify-between items-center">
+        <header className="bg-gray-900 bg-opacity-50 background-image" ref={homeRef}>
+            <nav className="max-w-7xl mx-auto p-4 flex justify-between items-center sticky top-0 z-50">
                 <div className="flex items-center">
                     <Image src="/muhammad-rizwan.jpeg" alt="Muhammad Rizwan" width={80} height={80} />
                     <h1 className="ml-4 text-white text-2xl">Muhammad Rizwan</h1>
@@ -92,9 +89,10 @@ const Navbar = () => {
                     </button>
                 </div>
                 <div className="hidden lg:flex items-center space-x-4">
-                    <a href="#" className="text-white text-xl" onClick={handleMenuItemClick}>Home</a>
-                    <a href="#" className="text-white text-xl" onClick={handleMenuItemClick}>About</a>
-                    <div className="hidden md:block">
+                    {menu.map((item, index) => <a key={index} href="#" className="text-white text-xl" onClick={() => {
+                        item.scroll();
+                    }}>{item.title}</a>)}
+                    {/* <div className="hidden md:block">
                         <div className="relative" ref={dropdownRef}>
                             <button
                                 className="text-white text-xl"
@@ -116,8 +114,8 @@ const Navbar = () => {
                             )}
                         </div>
 
-                    </div>
-                    <a href="#" className="text-white text-xl" onClick={handleDropdownItemClick}>Contact</a>
+                    </div> */}
+
                 </div>
                 {isDrawerOpen && (
                     <div
@@ -139,12 +137,13 @@ const Navbar = () => {
                                         d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
-                            <a href="#" className="block px-4 py-2" onClick={handleMenuItemClick}>Home</a>
-                            <a href="#" className="block px-4 py-2" onClick={handleMenuItemClick}>About</a>
-                            <div className="block px-4 py-2">
+                            {menu.map((item, index) => <a key={index} href="#" className="block px-4 py-2" onClick={() => {
+                                item.scroll();
+                            }}>{item.title}</a>)}
+                            {/* <div className="block px-4 py-2">
                                 <button
                                     className="text-white text-xl"
-                                    onClick={handleToggleDrawer} // Toggle dropdown visibility
+                                    onClick={handleToggleDrawer} 
                                 >
                                     Projects
                                 </button>
@@ -157,8 +156,8 @@ const Navbar = () => {
                                         <a href="#" className="block px-4 py-2" onClick={handleMenuItemClick}>Project 3</a>
                                     </div>
                                 )}
-                            </div>
-                            <a href="#" className="block px-4 py-2" onClick={handleMenuItemClick}>Contact</a>
+                            </div> */}
+
                         </div>
                     </div>
                 )}
