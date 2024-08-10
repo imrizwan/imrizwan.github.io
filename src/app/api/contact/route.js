@@ -1,18 +1,23 @@
 // src/app/api/contact/route.js
 
 import nodemailer from 'nodemailer';
-import NextCors from 'nextjs-cors';
 
-export async function POST(req) {
-  // Run the CORS middleware
-  await NextCors(req, {
-    // Options
-    origin: ['https://rizwan.tech', 'https://ezaan.tech'],
-    methods: ['POST', 'OPTIONS'],
-    // credentials: true,
-    // allowedHeaders: ['Content-Type'],
-  });
+export async function POST(req, res) {
 
+  res.setHeader('Access-Control-Allow-Credentials', true)
+  res.setHeader('Access-Control-Allow-Origin', '*') // replace this your actual origin
+  res.setHeader('Access-Control-Allow-Methods', 'GET,DELETE,PATCH,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+
+  // specific logic for the preflight request
+  if (req.method === 'OPTIONS') {
+    res.status(200).end()
+    return
+  }
+  
   const { name, email, subject, message } = await req.json();
 
   if (!name || !email || !subject || !message) {
