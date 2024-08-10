@@ -3,6 +3,25 @@
 import nodemailer from 'nodemailer';
 
 export async function POST(req) {
+
+  // Set CORS headers
+  const origin = req.headers.get('origin');
+  if (origin === 'https://rizwan.tech' || origin === 'https://ezaan.tech') {
+    return new Response('CORS Headers Missing', {
+      status: 403,
+    });
+  }
+
+  const headers = new Headers();
+  headers.append('Access-Control-Allow-Origin', origin);
+  headers.append('Access-Control-Allow-Credentials', 'true');
+  headers.append('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  headers.append('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers });
+  }
+  
   const { name, email, subject, message } = await req.json();
 
   if (!name || !email || !subject || !message) {
