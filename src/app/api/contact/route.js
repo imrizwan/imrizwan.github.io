@@ -9,8 +9,8 @@ export async function POST(req) {
     // Options
     origin: ['https://rizwan.tech', 'https://ezaan.tech'],
     methods: ['POST', 'OPTIONS'],
-    credentials: true,
-    allowedHeaders: ['Content-Type'],
+    // credentials: true,
+    // allowedHeaders: ['Content-Type'],
   });
 
   const { name, email, subject, message } = await req.json();
