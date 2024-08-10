@@ -13,7 +13,7 @@ export async function POST(req) {
   }
 
   const headers = new Headers();
-  headers.append('Access-Control-Allow-Origin', origin);
+  headers.append('Access-Control-Allow-Origin', '*');
   headers.append('Access-Control-Allow-Credentials', 'true');
   headers.append('Access-Control-Allow-Methods', 'POST, OPTIONS');
   headers.append('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,7 +21,7 @@ export async function POST(req) {
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers });
   }
-  
+
   const { name, email, subject, message } = await req.json();
 
   if (!name || !email || !subject || !message) {
