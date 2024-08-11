@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
+    from: "hello@rizwan.tech",
     name: '',
     email: '',
     subject: '',
