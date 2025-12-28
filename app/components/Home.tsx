@@ -1,61 +1,26 @@
 "use client";
-import DownloadResume from "./DownloadResume";
-import {
-  FaLinkedin,
-  FaGithub,
-  FaStackOverflow,
-  FaEnvelope,
-} from "react-icons/fa";
-import { FaAngleDoubleDown } from "react-icons/fa";
+import data from "../data.json";
 
 export default function Home() {
-  const scrollDown = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section className="flex items-center justify-center h-screen bg-blue-900 flex-col">
-      <div className="text-center">
-        <h1 className="text-6xl text-white font-bold mb-4">
-          Welcome to My Portfolio
+    <section className="flex flex-col items-center justify-center min-h-[60vh] md:min-h-[70vh] text-center px-6">
+      <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-1000 ease-out">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl mb-6 md:mb-8 leading-[0.9] tracking-tighter">
+          {data.personal_information.full_name.split(' ')[0]} <br />
+          <span className="text-[var(--text-muted)] mt-1 block italic opacity-60">{data.personal_information.full_name.split(' ').slice(1).join(' ')}</span>
         </h1>
-        <p className="text-2xl text-white mb-10">
-          Full Stack Developer | Specializing in Backend
+        
+        <p className="text-xl md:text-2xl lg:text-3xl text-[var(--text-muted)] font-light max-w-3xl mx-auto leading-relaxed px-4">
+          {data.personal_information.title} with {data.personal_information.experience_years} years of experience in architectural precision and backend excellence.
         </p>
-      </div>
-      <DownloadResume />
-      <div className="flex justify-center space-x-4 mt-8">
-        <a
-          href="https://linkedin.com/in/mrizwanshaikh"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaLinkedin className="text-3xl text-white" />
-        </a>
-        <a href="https://github.com/imrizwan" target="_blank" rel="noreferrer">
-          <FaGithub className="text-3xl text-white" />
-        </a>
-        <a
-          href="https://stackoverflow.com/users/razzyshaikh"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FaStackOverflow className="text-3xl text-white" />
-        </a>
-        <a href="mailto:your-razzyshaikh@gmail.com">
-          <FaEnvelope className="text-3xl text-white" />
-        </a>
-      </div>
-      <div className="mt-10">
-        <span onClick={scrollDown}>
-          <button>
-            <FaAngleDoubleDown className="text-4xl text-white animate-bounce" />
-          </button>
-        </span>
+        
+        <div className="mt-12 flex items-center justify-center gap-4">
+          <div className="h-px bg-[var(--border)] w-12 md:w-20"></div>
+          <span className="text-[10px] md:text-xs font-sans tracking-[0.4em] uppercase text-[var(--accent)] font-bold">Based in {data.personal_information.location.city}, {data.personal_information.location.country}</span>
+          <div className="h-px bg-[var(--border)] w-12 md:w-20"></div>
+        </div>
       </div>
     </section>
   );
 }
+

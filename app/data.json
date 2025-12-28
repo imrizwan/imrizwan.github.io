@@ -1,0 +1,260 @@
+{
+  "personal_information": {
+    "full_name": "Muhammad Rizwan",
+    "title": "Fullstack JavaScript Developer",
+    "experience_years": 6,
+    "location": {
+      "city": "Doha",
+      "country": "Qatar"
+    },
+    "contact": {
+      "phone": "+92 3049178827",
+      "email": "razzyshaikh@gmail.com",
+      "whatsapp": "+92 3049178827"
+    },
+    "profiles": {
+      "linkedin": "https://www.linkedin.com/in/mrizwanshaikh/",
+      "portfolio": "https://imrizwan.vercel.app/",
+      "github": "https://github.com/imrizwan"
+    }
+  },
+  "about": "Fullstack JavaScript Developer with 6 years of experience developing and maintaining web applications. Experienced in JavaScript, TypeScript, React, Next.js, Node.js, NestJS, databases, cloud infrastructure, Docker, Kubernetes, and microservices. Capable of working independently or in teams and delivering projects end-to-end.",
+  "skills": {
+    "frontend": [
+      "ReactJS",
+      "Next.js",
+      "Redux",
+      "Progressive Web Applications",
+      "HTML5",
+      "CSS",
+      "SCSS"
+    ],
+    "backend": [
+      "Node.js",
+      "NestJS",
+      "Express.js",
+      "NATS",
+      "TypeORM",
+      "Mongoose",
+      "Knex.js",
+      "Sequelize",
+      "Apache Kafka",
+      "RabbitMQ",
+      "Unit Testing",
+      "Postman"
+    ],
+    "databases": [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "SQL"
+    ],
+    "cloud_devops": [
+      "Docker",
+      "Kubernetes",
+      "Microservices",
+      "Redis",
+      "Oracle Cloud",
+      "AWS",
+      "Google Cloud Platform",
+      "Heroku",
+      "CI/CD"
+    ],
+    "languages_programming": [
+      "JavaScript",
+      "TypeScript",
+      "Object-Oriented Programming"
+    ],
+    "miscellaneous": [
+      "GitHub",
+      "GitLab",
+      "Bitbucket",
+      "JSON",
+      "Software Design Patterns",
+      "SOLID Principles"
+    ]
+  },
+  "work_experience": [
+    {
+      "company": "GWC Logistics",
+      "location": {
+        "city": "Doha",
+        "country": "Qatar"
+      },
+      "department": "Corporate IT",
+      "role": "Business App Developer",
+      "start_date": "2025-05-01",
+      "end_date": "Present",
+      "responsibilities": [
+        "Design and develop business applications",
+        "Support digital transformation initiatives",
+        "Collaborate with cross-functional teams in innovation lab",
+        "Build scalable, high-performance applications"
+      ]
+    },
+    {
+      "company": "Ezaan Tech / Freelance",
+      "location": {
+        "city": "Remote",
+        "country": "Pakistan"
+      },
+      "role": "Senior Software Engineer",
+      "start_date": "2024-01-01",
+      "end_date": "2025-03-31",
+      "responsibilities": [
+        "Worked with multiple clients on software and app development",
+        "Client acquisition via Upwork and other platforms",
+        "End-to-end management of client projects"
+      ]
+    },
+    {
+      "company": "Hypenet Network Services LLC",
+      "location": {
+        "city": "Dubai",
+        "country": "United Arab Emirates"
+      },
+      "role": "Senior Software Engineer",
+      "start_date": "2023-10-13",
+      "end_date": "2023-12-08",
+      "responsibilities": [
+        "Managed a team of 5 developers",
+        "Led project delivery until company closure",
+        "Cross-department collaboration",
+        "Represented company at GITEX Dubai 2023"
+      ]
+    },
+    {
+      "company": "TNC IT Group",
+      "location": {
+        "city": "Dubai",
+        "country": "United Arab Emirates"
+      },
+      "role": "Senior Backend Developer",
+      "start_date": "2022-02-28",
+      "end_date": "2023-10-13",
+      "responsibilities": [
+        "Agile development of applications and services",
+        "Built backend services using Node.js",
+        "Developed customer-facing UIs",
+        "Worked on blockchain-based applications"
+      ]
+    },
+    {
+      "company": "Digital Dividend",
+      "location": {
+        "city": "Karachi",
+        "country": "Pakistan"
+      },
+      "role": "Software Engineer (Level II)",
+      "start_date": "2020-02-01",
+      "end_date": "2022-01-31",
+      "responsibilities": [
+        "Promoted from Software Engineer I to II",
+        "Built applications from scratch",
+        "Maintained internal and external applications",
+        "Managed a remote team of 2 developers",
+        "Direct client interaction"
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelors in Computer Science",
+    "institution": "Sindh Madressatul Islam University",
+    "location": {
+      "city": "Karachi",
+      "country": "Pakistan"
+    },
+    "start_year": 2016,
+    "end_year": 2020,
+    "website": "https://smiu.edu.pk/"
+  },
+  "certifications_and_awards": [
+    {
+      "year": 2024,
+      "title": "AWS Fundamentals Specialization",
+      "provider": "AWS",
+      "platform": "Coursera"
+    },
+    {
+      "year": 2024,
+      "title": "Microservices with Node JS and React",
+      "provider": "Udemy",
+      "instructor": "Stephen Grider"
+    },
+    {
+      "year": 2024,
+      "title": "SQL for Data Science",
+      "provider": "University of California, Davis",
+      "platform": "Coursera"
+    },
+    {
+      "year": 2020,
+      "title": "React Nanodegree",
+      "provider": "Udacity"
+    },
+    {
+      "year": 2017,
+      "title": "Certified Mobile Application Developer (CMAD)",
+      "provider": "All Pakistan Memon Federation"
+    },
+    {
+      "year": "2017",
+      "title": "Runner-Up",
+      "event": "Google DevFest Hackathon",
+      "organizer": "GDG Kolachi"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Red Sea Digital (CMS)",
+      "period": "03/2020 - 01/2021",
+      "description": "Created innovative CMS for Red Sea Digital (RSD), simplifying content management across multiple screens.\nLed development of RSD CMS, enhancing audience engagement and digital management capabilities.\nDelivered user-friendly interface for dynamic content scheduling and targeted messaging.",
+      "technologies": "Nodejs, Reactjs, HTML, CSS, Javascript, Typescript, MongoDB, Firebase, Docker etc."
+    },
+    {
+      "title": "CarHub",
+      "period": "03/2020 - 01/2022",
+      "description": "Created CarHub, a digitalized automotive service solution for convenient and quality car servicing.\nIntegrated various service providers on a single platform, offering location, services, and pricing information.\nStreamlined the process of selecting service providers, enhancing the car service experience for users.",
+      "technologies": "Nodejs, Reactjs, HTML, CSS, Javascript, Typescript, MongoDB, PostgreSQL, Firebase, Docker etc."
+    },
+    {
+      "title": "Real Research & RR Store",
+      "period": "",
+      "description": "Architected and implemented the Real Research backend utilizing MongoDB, Node.js, Express.js, and other cutting-edge JavaScript technologies,\nincluding Mongoose ORM, Redis for caching, RabbitMQ for messaging, and Socket.io for real-time communication.\nLeveraged the power of asynchronous programming and event-driven architecture with technologies such as async/await, Promises, and event\nemitters, enhancing scalability and responsiveness.\nIntegrated robust authentication and authorization mechanisms using technologies like Passport.js and JSON Web Tokens (JWT) to ensure secure\naccess to Real Research services.",
+      "technologies": "Node.js, Express.js, MongoDB, Redis, RabbitMQ, Socket.io, Passport.js, JWT"
+    },
+    {
+      "title": "Stream-Coin",
+      "period": "",
+      "description": "Developed the StreamCoin blockchain app as a backend developer, leveraging technologies such as Ethereum, and web3.js for blockchain\nintegration.\nImplemented smart contracts to enable secure and direct transactions between users and streamers, eliminating the need for intermediaries.\nUtilized Node.js, Express.js, and JavaScript to build the backend infrastructure, incorporating real-time communication and database technologies\nlike WebSockets and MongoDB for seamless functionality and efficient data management.",
+      "technologies": "Ethereum, web3.js, Solidity, Node.js, Express.js, MongoDB, WebSockets"
+    },
+    {
+      "title": "Homeros Coin",
+      "period": "",
+      "description": "Blockchain based application for gaming community.",
+      "technologies": "Ethereum blockchain, Solidity smart contract language, web3.js library, Node.js, Express.js, JavaScript, WebSockets, MongoDB"
+    },
+    {
+      "title": "Gera Coin",
+      "period": "",
+      "description": "Blockchain based application for logistics.",
+      "technologies": "Ethereum blockchain, Solidity smart contract language, web3.js library, Node.js, Express.js, JavaScript, WebSockets, MongoDB"
+    }
+  ],
+  "languages": [
+
+    {
+      "language": "Urdu",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "listening": "C1",
+      "reading": "C1",
+      "writing": "C1",
+      "spoken_production": "C1",
+      "spoken_interaction": "C1"
+    }
+  ]
+}
