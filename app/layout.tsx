@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter, DM_Serif_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react'
 import data from './data.json'
 
 const inter = Inter({ 
@@ -87,6 +88,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased selection:bg-blue-100 selection:text-blue-900`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
