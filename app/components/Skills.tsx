@@ -97,7 +97,7 @@ export default function Skills() {
   const categories = Object.keys(data.skills) as Array<keyof typeof data.skills>;
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 border-t border-[var(--border)]">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 border-t border-[var(--border)]" aria-label="Technical Skills">
       <div className="grid-layout">
         <div className="md:col-span-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[var(--text)] mb-4">
@@ -114,21 +114,21 @@ export default function Skills() {
               <h3 className="text-xl md:text-2xl font-sans tracking-[0.2em] uppercase text-[var(--accent)] opacity-80 border-b border-[var(--border)] pb-2">
                 {category.replace("_", " ")}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" aria-label={`${category.replace("_", " ")} skills`}>
                 {data.skills[category].map((skill) => (
-                  <div
+                  <li
                     className="group flex items-start gap-4 p-4 rounded-lg hover:bg-white dark:hover:bg-slate-900 transition-all duration-300 border border-transparent hover:border-[var(--border)] hover:shadow-sm"
                     key={skill}
                   >
-                    <div className="text-2xl text-[var(--accent)] shrink-0 transition-transform duration-300 group-hover:scale-110">
+                    <div className="text-2xl text-[var(--accent)] shrink-0 transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
                       {iconMap[skill] || <AiOutlineSolution />}
                     </div>
                     <div className="flex flex-col min-w-0">
-                      <p className="text-sm md:text-base font-medium text-[var(--text)] leading-tight break-words">{skill}</p>
+                      <span className="text-sm md:text-base font-medium text-[var(--text)] leading-tight break-words">{skill}</span>
                     </div>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

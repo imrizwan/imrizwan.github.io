@@ -4,7 +4,7 @@ export default function Honors() {
   const awards = data.certifications_and_awards.filter(item => 'event' in item || 'organizer' in item);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 border-t border-[var(--border)]">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20 border-t border-[var(--border)]" aria-label="Honors and Awards">
       <div className="grid md:grid-cols-12 gap-12">
         <div className="md:col-span-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[var(--text)]">
@@ -15,11 +15,12 @@ export default function Honors() {
           </p>
         </div>
         
-        <div className="md:col-span-8 flex flex-col gap-8">
+        <div className="md:col-span-8 flex flex-col gap-8" role="list" aria-label="Honors list">
           {awards.map((honor: any, index: number) => (
-            <div
+            <article
               key={index}
               className="group border-b border-[var(--border)] pb-8 last:border-none last:pb-0"
+              role="listitem"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
                 <h3 className="text-2xl md:text-3xl text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
@@ -27,14 +28,14 @@ export default function Honors() {
                 </h3>
                 {honor.year && (
                   <span className="text-sm font-sans tracking-widest uppercase text-[var(--text-muted)]">
-                    {honor.year}
+                    <time dateTime={honor.year.toString()}>{honor.year}</time>
                   </span>
                 )}
               </div>
               <p className="text-lg text-[var(--text-muted)] font-light italic">
                 {honor.organizer || honor.institution}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </div>

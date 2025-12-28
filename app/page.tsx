@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { 
   FaHome, 
   FaUser, 
@@ -15,26 +16,16 @@ import {
 } from "react-icons/fa";
 
 import Home from "./components/Home";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Certificates from "./components/Certificates";
-import Awards from "./components/Awards";
-import Languages from "./components/Languages";
-import Contact from "./components/Contact";
-import DownloadResume from "./components/DownloadResume";
-
 const sections = [
   { id: "home", name: "Overview", icon: FaHome, component: Home },
-  { id: "about", name: "About", icon: FaUser, component: About },
-  { id: "skills", name: "Expertise", icon: FaCode, component: Skills },
-  { id: "experience", name: "Experience", icon: FaBriefcase, component: Experience },
-  { id: "projects", name: "Selected Works", icon: FaProjectDiagram, component: Projects },
-  { id: "certificates", name: "Certifications", icon: FaCertificate, component: Certificates },
-  { id: "awards", name: "Honors", icon: FaAward, component: Awards },
-  { id: "languages", name: "Languages", icon: FaGlobe, component: Languages },
-  { id: "contact", name: "Contact", icon: FaEnvelope, component: Contact },
+  { id: "about", name: "About", icon: FaUser, component: dynamic(() => import("./components/About"), { ssr: false }) },
+  { id: "skills", name: "Expertise", icon: FaCode, component: dynamic(() => import("./components/Skills"), { ssr: false }) },
+  { id: "experience", name: "Experience", icon: FaBriefcase, component: dynamic(() => import("./components/Experience"), { ssr: false }) },
+  { id: "projects", name: "Selected Works", icon: FaProjectDiagram, component: dynamic(() => import("./components/Projects"), { ssr: false }) },
+  { id: "certificates", name: "Certifications", icon: FaCertificate, component: dynamic(() => import("./components/Certificates"), { ssr: false }) },
+  { id: "awards", name: "Honors", icon: FaAward, component: dynamic(() => import("./components/Awards"), { ssr: false }) },
+  { id: "languages", name: "Languages", icon: FaGlobe, component: dynamic(() => import("./components/Languages"), { ssr: false }) },
+  { id: "contact", name: "Contact", icon: FaEnvelope, component: dynamic(() => import("./components/Contact"), { ssr: false }) },
 ];
 
 import data from "./data.json";
@@ -63,11 +54,13 @@ export default function HomePage() {
             </div>
           </div>
           
-          <nav className="flex items-center gap-2 md:gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 pr-4">
+          <nav className="flex items-center gap-2 md:gap-4 overflow-x-auto no-scrollbar scroll-smooth py-2 pr-4" aria-label="Main navigation">
             {sections.slice(0, 8).map((section) => (
               <button
                 key={section.id}
                 onClick={() => setActiveSection(section.id)}
+                aria-label={`Go to ${section.name} section`}
+                aria-current={activeSection === section.id ? "page" : undefined}
                 className={`p-2 md:p-4 rounded-none transition-all duration-300 flex flex-col items-center gap-1.5 shrink-0 group ${
                   activeSection === section.id 
                     ? "text-[var(--accent)] border-b-2 border-[var(--accent)]" 
@@ -75,7 +68,7 @@ export default function HomePage() {
                 }`}
                 title={section.name}
               >
-                <section.icon className={`text-xl md:text-2xl transition-transform ${activeSection === section.id ? "scale-110" : "group-hover:scale-110"}`} />
+                <section.icon aria-hidden="true" className={`text-xl md:text-2xl transition-transform ${activeSection === section.id ? "scale-110" : "group-hover:scale-110"}`} />
                 <span className="text-[9px] md:text-[10px] uppercase tracking-[0.15em] hidden lg:block font-bold">
                   {section.name.split(' ')[0]}
                 </span>
@@ -86,7 +79,13 @@ export default function HomePage() {
       </header>
 
       {/* Content Area */}
-      <div className="flex-1 overflow-y-auto no-scrollbar scroll-smooth">
+      {/* Content Area */}
+      <div 
+        className="flex-1 overflow-y-auto no-scrollbar scroll-smooth focus:outline-none" 
+        id="main-content"
+        tabIndex={-1}
+        role="main"
+      >
         <div className="animate-in fade-in zoom-in-95 duration-700 ease-out">
           <ActiveComponent />
         </div>
@@ -97,13 +96,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 h-16 md:h-24 flex items-center justify-between">
           <button 
             onClick={() => setActiveSection("contact")}
+            aria-label="Open contact section"
             className={`flex items-center gap-3 px-4 md:px-8 h-full transition-all duration-300 relative group ${
               activeSection === "contact" 
                 ? "text-[var(--accent)]" 
                 : "text-[var(--text-muted)] hover:text-[var(--text)]"
             }`}
           >
-            <FaEnvelope className="text-xl shrink-0" />
+            <FaEnvelope aria-hidden="true" className="text-xl shrink-0" />
             <span className="text-xs md:text-sm font-sans tracking-[0.2em] uppercase hidden sm:block font-bold">Inquiries</span>
             {activeSection === "contact" && (
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-[var(--accent)] animate-in fade-in duration-500"></div>
@@ -114,9 +114,11 @@ export default function HomePage() {
             <a
               href="https://drive.google.com/drive/folders/1GNTmMZ6JdR_e-u90SB53dUAJsv91BUjJ"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download CV (opens in new tab)"
               className="flex items-center gap-3 px-8 md:px-12 py-3 md:py-4 bg-[var(--text)] text-[var(--bg)] text-[10px] md:text-xs tracking-[0.3em] uppercase hover:bg-[var(--accent)] transition-all duration-500 font-bold group"
             >
-              <FaDownload className="text-base group-hover:animate-bounce" />
+              <FaDownload aria-hidden="true" className="text-base group-hover:animate-bounce" />
               <span>Download CV</span>
             </a>
           </div>

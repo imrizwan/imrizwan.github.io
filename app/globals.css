@@ -27,6 +27,10 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-[var(--accent)];
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight font-normal leading-tight;
   }
