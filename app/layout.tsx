@@ -17,6 +17,21 @@ const dmSerif = DM_Serif_Display({
   display: 'swap',
 })
 
+const SITE_URL = 'https://imrizwan.vercel.app'
+
+const { personal_information: person, skills, education, work_experience } = data
+const fullName = person.full_name
+const headline = `${fullName} — ${person.title}`
+const richDescription =
+  `${fullName} is a ${person.title} with ${person.experience_years} years of experience, ` +
+  `based in ${person.location.city}, ${person.location.country}. ` +
+  data.about
+
+// Flattened skill list — used for keywords and the JSON-LD `knowsAbout` field
+// so search engines and AI/LLM crawlers can match expertise to queries.
+const allSkills = Array.from(new Set(Object.values(skills).flat()))
+const currentRole = work_experience.find((w) => w.end_date === 'Present')
+
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#fafafa' },
@@ -24,6 +39,58 @@ export const viewport: Viewport = {
   ],
   width: 'device-width',
   initialScale: 1,
+}
+
+// Schema.org structured data. Rich, machine-readable context is the single
+// biggest lever for both rich results and AI/LLM-powered search (ChatGPT
+// Search, Perplexity, Gemini, Google AI Overviews) understanding the profile.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#person`,
+      name: fullName,
+      url: SITE_URL,
+      image: `${SITE_URL}/og-image.png`,
+      jobTitle: person.title,
+      description: richDescription,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: person.location.city,
+        addressCountry: person.location.country,
+      },
+      sameAs: [person.profiles.linkedin, person.profiles.github, person.profiles.portfolio],
+      knowsAbout: allSkills,
+      knowsLanguage: data.languages.map((l) => l.language),
+      alumniOf: {
+        '@type': 'CollegeOrUniversity',
+        name: education.institution,
+        url: education.website,
+      },
+      ...(currentRole && {
+        worksFor: { '@type': 'Organization', name: currentRole.company },
+      }),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: headline,
+      description: richDescription,
+      inLanguage: 'en',
+      publisher: { '@id': `${SITE_URL}/#person` },
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: headline,
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: { '@id': `${SITE_URL}/#person` },
+      inLanguage: 'en',
+    },
+  ],
 }
 
 // Set the theme before first paint to avoid a light/dark flash (FOUC).
@@ -38,47 +105,62 @@ const themeInitScript = `
 `
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://imrizwan.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: data.personal_information.full_name,
-    template: `%s | ${data.personal_information.full_name}`
+    default: headline,
+    template: `%s | ${fullName}`,
   },
-  description: data.about,
+  description: richDescription,
+  applicationName: `${fullName} — Portfolio`,
+  category: 'technology',
   keywords: [
-    'Fullstack Developer', 
-    'JavaScript', 
-    'React', 
-    'Next.js', 
-    'Node.js', 
-    'TypeScript', 
-    'Web Development',
-    'Muhammad Rizwan',
+    fullName,
     'Rizwan',
+    'Fullstack Developer',
+    'Fullstack JavaScript Developer',
     'Frontend Developer',
-    'Backend Developer'
+    'Backend Developer',
+    'Software Engineer',
+    `Developer in ${person.location.city}`,
+    'JavaScript',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Node.js',
+    'AI Agents',
+    'Agentic AI',
+    'Multi-Agent Systems',
+    'OpenAI Agents SDK',
+    'LangGraph',
+    'CrewAI',
+    'Model Context Protocol',
   ],
-  authors: [{ name: data.personal_information.full_name }],
-  creator: data.personal_information.full_name,
+  authors: [{ name: fullName, url: SITE_URL }],
+  creator: fullName,
+  publisher: fullName,
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    type: 'website',
+    type: 'profile',
     locale: 'en_US',
-    url: 'https://imrizwan.vercel.app/',
-    title: data.personal_information.full_name,
-    description: data.about,
-    siteName: data.personal_information.full_name,
+    url: SITE_URL,
+    title: headline,
+    description: richDescription,
+    siteName: fullName,
     images: [
       {
-        url: '/og-image.png', // I should generate this or ask user
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: data.personal_information.full_name,
+        alt: headline,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: data.personal_information.full_name,
-    description: data.about,
+    title: headline,
+    description: richDescription,
     images: ['/og-image.png'],
   },
   robots: {
@@ -103,6 +185,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased selection:bg-blue-100 selection:text-blue-900`}>
         {children}
