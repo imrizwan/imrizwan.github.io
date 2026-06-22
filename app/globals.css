@@ -111,6 +111,18 @@
   }
 }
 
+/* Print: clean A4 margins and force light colors so the CV exports as a tidy
+   PDF regardless of the active theme. */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+}
+
 /* Respect users who prefer reduced motion: neutralize reveals, the text-reveal
    keyframe, Tailwind's animate-in utilities, and long transitions. */
 @media (prefers-reduced-motion: reduce) {

@@ -1,12 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { FaDownload, FaEnvelope } from "react-icons/fa";
 import { scrollToSection } from "./scrollToSection";
 
-const CV_URL =
-  "https://drive.google.com/drive/folders/1GNTmMZ6JdR_e-u90SB53dUAJsv91BUjJ";
-
-/** Sticky footer CTA bar: jump to contact + download CV. */
+/** Sticky footer CTA bar: jump to contact + view/download CV. */
 export default function SiteFooter() {
   return (
     <footer className="sticky bottom-0 z-50 w-full border-t border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md">
@@ -23,16 +21,14 @@ export default function SiteFooter() {
           </span>
         </button>
 
-        <a
-          href={CV_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Download CV (opens in new tab)"
+        <Link
+          href="/cv"
+          aria-label="View and download CV"
           className="flex items-center gap-3 px-8 md:px-12 py-3 md:py-4 bg-[var(--text)] text-[var(--bg)] text-[10px] md:text-xs tracking-[0.3em] uppercase hover:bg-[var(--accent)] transition-all duration-500 font-bold group"
         >
           <FaDownload aria-hidden="true" className="text-base group-hover:animate-bounce" />
-          <span>Download CV</span>
-        </a>
+          <span>View CV</span>
+        </Link>
       </div>
     </footer>
   );
