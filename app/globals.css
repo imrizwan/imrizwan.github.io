@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Make Tailwind's `dark:` variant follow the [data-theme='dark'] attribute
+   (set by ThemeToggle) instead of the OS-level prefers-color-scheme, so the
+   toggle and the CSS variables below always agree. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-serif), ui-serif, Georgia, serif;
@@ -23,12 +28,38 @@
   }
 
   body {
-    @apply bg-[var(--bg)] text-[var(--text)] transition-colors duration-500 h-screen overflow-hidden;
+    @apply bg-[var(--bg)] text-[var(--text)] transition-colors duration-500;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Anchored sections clear the sticky header when scrolled to via the nav. */
+  [data-section] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    [data-section] {
+      scroll-margin-top: 7rem;
+    }
   }
 
   :focus-visible {
     @apply outline-2 outline-offset-4 outline-[var(--accent)];
+  }
+
+  /* Tailwind v4 no longer sets cursor: pointer on buttons — restore it for
+     links and interactive controls. */
+  a,
+  button,
+  [role="button"],
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -64,5 +95,40 @@
   @keyframes text-reveal {
     0% { transform: translateY(30px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Scroll-triggered reveal — sections fade/slide in as they enter the viewport. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect users who prefer reduced motion: neutralize reveals, the text-reveal
+   keyframe, Tailwind's animate-in utilities, and long transitions. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

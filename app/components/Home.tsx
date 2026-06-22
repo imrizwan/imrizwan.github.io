@@ -14,12 +14,20 @@ export default function Home() {
         <p className="text-xl md:text-2xl lg:text-3xl text-[var(--text-muted)] font-light max-w-3xl mx-auto leading-relaxed px-4">
           {data.personal_information.title} with {data.personal_information.experience_years} years of experience in architectural precision and backend excellence.
         </p>
-        
-        {/* <div className="mt-12 flex items-center justify-center gap-4" aria-hidden="true">
-          <div className="h-px bg-[var(--border)] w-12 md:w-20"></div>
-          <span className="text-[10px] md:text-xs font-sans tracking-[0.4em] uppercase text-[var(--accent)] font-bold">Based in {data.personal_information.location.city}, {data.personal_information.location.country}</span>
-          <div className="h-px bg-[var(--border)] w-12 md:w-20"></div>
-        </div> */}
+
+        <div className="mt-10 md:mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          <span className="inline-flex items-center gap-2.5 text-[10px] md:text-xs font-sans tracking-[0.25em] uppercase text-[var(--text)] font-bold">
+            <span className="relative flex h-2 w-2" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75 motion-safe:animate-ping"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+            </span>
+            Open to opportunities
+          </span>
+          <span className="h-4 w-px bg-[var(--border)] hidden sm:block" aria-hidden="true"></span>
+          <span className="text-[10px] md:text-xs font-sans tracking-[0.25em] uppercase text-[var(--accent)] font-bold">
+            Based in {data.personal_information.location.city}, {data.personal_information.location.country}
+          </span>
+        </div>
       </div>
     </section>
   );

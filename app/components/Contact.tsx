@@ -4,7 +4,7 @@ export default function ContactMe() {
   const { contact, profiles } = data.personal_information;
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 md:py-24" id="contact" aria-label="Contact Information">
+    <section className="max-w-7xl mx-auto px-6 py-12 md:py-24" aria-label="Contact Information">
       <div className="flex flex-col gap-10 text-center items-center">
         <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-[var(--text)]">
           Let&apos;s <span className="italic opacity-60">Connect</span>

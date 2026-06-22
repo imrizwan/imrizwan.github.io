@@ -18,12 +18,27 @@ const dmSerif = DM_Serif_Display({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#2563eb',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fafafa' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
   width: 'device-width',
   initialScale: 1,
 }
 
+// Set the theme before first paint to avoid a light/dark flash (FOUC).
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.dataset.theme = theme;
+  } catch (e) {}
+})();
+`
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://imrizwan.vercel.app'),
   title: {
     default: data.personal_information.full_name,
     template: `%s | ${data.personal_information.full_name}`
@@ -47,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://imrizwan.github.io/',
+    url: 'https://imrizwan.vercel.app/',
     title: data.personal_information.full_name,
     description: data.about,
     siteName: data.personal_information.full_name,
@@ -86,6 +101,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased selection:bg-blue-100 selection:text-blue-900`}>
         {children}
         <Analytics />

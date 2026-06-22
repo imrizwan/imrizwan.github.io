@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://imrizwan.github.io/sitemap.xml',
+    sitemap: 'https://imrizwan.vercel.app/sitemap.xml',
   }
 }

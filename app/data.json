@@ -20,6 +20,19 @@
   },
   "about": "Fullstack JavaScript Developer with 6 years of experience developing and maintaining web applications. Experienced in JavaScript, TypeScript, React, Next.js, Node.js, NestJS, databases, cloud infrastructure, Docker, Kubernetes, and microservices. Capable of working independently or in teams and delivering projects end-to-end.",
   "skills": {
+    "agentic_ai": [
+      "OpenAI Agents SDK",
+      "AutoGen",
+      "LangGraph",
+      "CrewAI",
+      "Model Context Protocol",
+      "n8n",
+      "Tavily",
+      "Gradio",
+      "Multi-Agent Systems",
+      "Agentic Workflows",
+      "LLM Orchestration"
+    ],
     "frontend": [
       "ReactJS",
       "Next.js",

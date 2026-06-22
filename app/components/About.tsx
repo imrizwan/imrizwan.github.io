@@ -2,7 +2,7 @@ import data from "../data.json";
 
 export default function About() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20" id="about" aria-label="About me">
+    <section className="max-w-6xl mx-auto px-6 py-12 md:py-20" aria-label="About me">
       <div className="grid-layout">
         <div className="md:col-span-4">
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[var(--text)] mb-6 md:mb-0">

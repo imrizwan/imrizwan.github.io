@@ -11,6 +11,16 @@ import {
   FaGithub,
   FaGitlab,
   FaBitbucket,
+  FaRobot,
+  FaComments,
+  FaSitemap,
+  FaUsers,
+  FaPlug,
+  FaStream,
+  FaSearch,
+  FaServer,
+  FaNetworkWired,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import {
   SiRedux,
@@ -33,6 +43,7 @@ import {
   SiRedis,
   SiPostman,
   SiTestinglibrary,
+  SiOpenai,
 } from "react-icons/si";
 import { VscAzureDevops } from "react-icons/vsc";
 import { AiOutlineSolution } from "react-icons/ai";
@@ -40,6 +51,19 @@ import { MdDataObject } from "react-icons/md";
 
 export default function Skills() {
   const iconMap: Record<string, any> = {
+    // Agentic AI
+    "OpenAI Agents SDK": <SiOpenai />,
+    "AutoGen": <FaComments />,
+    "LangGraph": <FaSitemap />,
+    "CrewAI": <FaUsers />,
+    "Model Context Protocol": <FaPlug />,
+    "n8n": <FaStream />,
+    "Tavily": <FaSearch />,
+    "Gradio": <FaServer />,
+    "Multi-Agent Systems": <FaNetworkWired />,
+    "Agentic Workflows": <FaProjectDiagram />,
+    "LLM Orchestration": <FaRobot />,
+
     // Frontend
     "ReactJS": <FaReact />,
     "Next.js": <SiNextdotjs />,
