@@ -231,16 +231,10 @@
       "technologies": "Nodejs, Reactjs, HTML, CSS, Javascript, Typescript, MongoDB, PostgreSQL, Firebase, Docker etc."
     },
     {
-      "title": "Real Research & RR Store",
+      "title": "Blockchain & Enterprise Web3 Platforms",
       "period": "",
-      "description": "Architected and implemented the Real Research backend utilizing MongoDB, Node.js, Express.js, and other cutting-edge JavaScript technologies,\nincluding Mongoose ORM, Redis for caching, RabbitMQ for messaging, and Socket.io for real-time communication.\nLeveraged the power of asynchronous programming and event-driven architecture with technologies such as async/await, Promises, and event\nemitters, enhancing scalability and responsiveness.\nIntegrated robust authentication and authorization mechanisms using technologies like Passport.js and JSON Web Tokens (JWT) to ensure secure\naccess to Real Research services.",
-      "technologies": "Node.js, Express.js, MongoDB, Redis, RabbitMQ, Socket.io, Passport.js, JWT"
-    },
-    {
-      "title": "Blockchain Applications (Crypto Tokens & Smart Contracts)",
-      "period": "",
-      "description": "Architected and developed decentralized blockchain applications and custom crypto tokens for diverse industries including live streaming, gaming communities, and logistics tracking.\nImplemented Ethereum smart contracts in Solidity for secure, direct user transactions and asset management.\nBuilt robust Node.js and Express.js backend infrastructure integrated with web3.js, WebSockets, and MongoDB for seamless data management and real-time blockchain event processing.",
-      "technologies": "Ethereum, Solidity, Web3.js, Node.js, Express.js, MongoDB, WebSockets"
+      "description": "Architected and implemented high-throughput backend services and decentralized blockchain platforms serving survey, e-commerce, streaming, gaming, and logistics domains.\nBuilt scalable event-driven microservices using Node.js, Express.js, MongoDB, Redis caching, RabbitMQ message broker, and Socket.io for real-time data streaming.\nDesigned and deployed Ethereum smart contracts in Solidity with Web3.js integration for secure crypto token transactions, user rewards, and automated smart-contract interactions.",
+      "technologies": "Node.js, Express.js, Ethereum, Solidity, Web3.js, MongoDB, Redis, RabbitMQ, Socket.io, WebSockets, JWT"
     }
   ],
   "languages": [
