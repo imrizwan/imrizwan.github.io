@@ -237,22 +237,10 @@
       "technologies": "Node.js, Express.js, MongoDB, Redis, RabbitMQ, Socket.io, Passport.js, JWT"
     },
     {
-      "title": "Stream-Coin",
+      "title": "Blockchain Applications (Crypto Tokens & Smart Contracts)",
       "period": "",
-      "description": "Developed the StreamCoin blockchain app as a backend developer, leveraging technologies such as Ethereum, and web3.js for blockchain\nintegration.\nImplemented smart contracts to enable secure and direct transactions between users and streamers, eliminating the need for intermediaries.\nUtilized Node.js, Express.js, and JavaScript to build the backend infrastructure, incorporating real-time communication and database technologies\nlike WebSockets and MongoDB for seamless functionality and efficient data management.",
-      "technologies": "Ethereum, web3.js, Solidity, Node.js, Express.js, MongoDB, WebSockets"
-    },
-    {
-      "title": "Homeros Coin",
-      "period": "",
-      "description": "Blockchain based application for gaming community.",
-      "technologies": "Ethereum blockchain, Solidity smart contract language, web3.js library, Node.js, Express.js, JavaScript, WebSockets, MongoDB"
-    },
-    {
-      "title": "Gera Coin",
-      "period": "",
-      "description": "Blockchain based application for logistics.",
-      "technologies": "Ethereum blockchain, Solidity smart contract language, web3.js library, Node.js, Express.js, JavaScript, WebSockets, MongoDB"
+      "description": "Architected and developed decentralized blockchain applications and custom crypto tokens for diverse industries including live streaming, gaming communities, and logistics tracking.\nImplemented Ethereum smart contracts in Solidity for secure, direct user transactions and asset management.\nBuilt robust Node.js and Express.js backend infrastructure integrated with web3.js, WebSockets, and MongoDB for seamless data management and real-time blockchain event processing.",
+      "technologies": "Ethereum, Solidity, Web3.js, Node.js, Express.js, MongoDB, WebSockets"
     }
   ],
   "languages": [
