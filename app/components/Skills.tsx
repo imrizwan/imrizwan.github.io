@@ -127,9 +127,17 @@ export default function Skills() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl text-[var(--text)] mb-4">
             Expertise
           </h2>
-          <p className="text-[var(--text-muted)] font-light max-w-xs text-base md:text-lg">
+          <p className="text-[var(--text-muted)] font-light max-w-xs text-base md:text-lg mb-6">
             A comprehensive set of tools and technologies I use to build modern software.
           </p>
+          <blockquote className="max-w-xs border-l-2 border-[var(--accent)]/40 pl-4">
+            <p className="font-serif text-base md:text-lg italic text-[var(--text)] leading-snug">
+              &ldquo;And of knowledge, you have been given only a little.&rdquo;
+            </p>
+            <footer className="mt-2 text-xs tracking-[0.2em] uppercase text-[var(--text-muted)] not-italic font-sans">
+              — Qur&apos;an 17:85
+            </footer>
+          </blockquote>
         </div>
         
         <div className="md:col-span-8 flex flex-col gap-12">

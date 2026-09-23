@@ -97,12 +97,12 @@
     100% { transform: translateY(0); opacity: 1; }
   }
 
-  /* Scroll-triggered reveal — sections fade/slide in as they enter the viewport. */
+  /* Scroll-triggered reveal — slightly deeper travel so motion syncs with Lenis. */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(36px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
   .reveal.is-visible {

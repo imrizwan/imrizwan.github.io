@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import { useLenis } from "lenis/react";
 import data from "../data.json";
 import { navSections, sections } from "./sections";
 import { useScrollSpy } from "./useScrollSpy";
-import { scrollToSection } from "./scrollToSection";
+import { useScrollToSection } from "./scrollToSection";
 import ThemeToggle from "./ThemeToggle";
 
 /** Sticky header: name + live section label, scroll-spy icon nav, theme toggle. */
@@ -11,9 +13,22 @@ export default function Navigation() {
   const sectionIds = sections.map((s) => s.id);
   const activeId = useScrollSpy(sectionIds);
   const activeName = sections.find((s) => s.id === activeId)?.name ?? "Overview";
+  const scrollToSection = useScrollToSection();
+  const [scrolled, setScrolled] = useState(false);
+
+  useLenis((lenis) => {
+    const next = lenis.scroll > 24;
+    setScrolled((prev) => (prev === next ? prev : next));
+  });
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300 ${
+        scrolled
+          ? "border-[var(--border)] bg-[var(--bg)]/90 backdrop-blur-lg"
+          : "border-transparent bg-[var(--bg)]/80 backdrop-blur-md"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-24 flex items-center justify-between gap-4 md:gap-8">
         <button
           type="button"
@@ -35,6 +50,7 @@ export default function Navigation() {
         </button>
 
         <nav
+          data-lenis-prevent
           className="flex items-center gap-1 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth py-2"
           aria-label="Main navigation"
         >

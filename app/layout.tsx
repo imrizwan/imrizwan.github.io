@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter, DM_Serif_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import SmoothScrollProvider from './components/SmoothScrollProvider'
 import data from './data.json'
 
 const inter = Inter({ 
@@ -182,7 +183,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script
@@ -191,7 +192,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${dmSerif.variable} font-sans antialiased selection:bg-blue-100 selection:text-blue-900`}>
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
         <Analytics />
       </body>
     </html>

@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { FaDownload, FaEnvelope } from "react-icons/fa";
-import { scrollToSection } from "./scrollToSection";
+import { useScrollToSection } from "./scrollToSection";
 
 /** Sticky footer CTA bar: jump to contact + view/download CV. */
 export default function SiteFooter() {
+  const scrollToSection = useScrollToSection();
+
   return (
     <footer className="sticky bottom-0 z-50 w-full border-t border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-16 md:h-24 flex items-center justify-between">
